@@ -6,11 +6,7 @@
   "module": "lib/index.esm.js",
   "scripts": {
     "lint": "eslint 'src/**/*.{js,ts}'",
-    "dev": "rollup -w -c --environment FORMAT:esm",
-    "build:esm": "rollup -c --environment FORMAT:esm",
-    "build:umd": "rollup -c --environment FORMAT:umd",
-    "build:min": "rollup -c --environment FORMAT:min",
-    "build": "rimraf lib/* && run-p build:esm build:umd build:min"
+    "build": "rimraf lib/* && tsc --outDir lib"
   },
   "author": "",
   "license": "ISC",
