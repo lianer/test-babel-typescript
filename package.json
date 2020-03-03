@@ -6,7 +6,9 @@
   "module": "lib/index.esm.js",
   "scripts": {
     "lint": "eslint 'src/**/*.{js,ts}'",
-    "build": "rimraf lib/* && tsc --outDir lib"
+    "prettier": "prettier lib/* --write",
+    "build:ts": "tsc --outDir lib",
+    "build": "rimraf lib/* && npm run build:ts && npm run prettier"
   },
   "author": "",
   "license": "ISC",
