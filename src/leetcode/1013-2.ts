@@ -45,8 +45,8 @@
  * @param {number[]} A
  * @return {boolean}
  */
-var canThreePartsEqualSum = function(A: number[]) {
-  let sum = A.reduce((_sum, val) => _sum + val);
+const canThreePartsEqualSum = function(A: number[]) {
+  const sum = A.reduce((_sum, val) => _sum + val);
   if (sum % 3 !== 0) {
     return false;
   }
@@ -55,7 +55,7 @@ var canThreePartsEqualSum = function(A: number[]) {
   let right = A.length - 1;
   let leftSum = A[left];
   let rightSum = A[right];
-  let avg = sum / 3;
+  const avg = sum / 3;
 
   while (left + 1 < right) {
     if (leftSum === avg && rightSum === avg) {

@@ -44,8 +44,8 @@ const twoSum = function(nums: number[], target: number) {
     hashMap[val] = index;
   });
   for (let i = 0; i < nums.length; i++) {
-    let a = nums[i];
-    let b = target - a;
+    const a = nums[i];
+    const b = target - a;
     if (hashMap.hasOwnProperty(b) && i !== hashMap[b]) {
       // 自左向右遍历，i 肯定在前面
       return [i, hashMap[b]];

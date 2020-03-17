@@ -27,11 +27,11 @@ interface PrintMap {
 const input: string[] = ['A;B;win', 'A;C;win', 'B;C;loss', 'C;D;loss', 'B;D;draw'];
 
 class Team {
-  private name: string = '';
-  public W: number = 0;
-  public D: number = 0;
-  public L: number = 0;
-  public GP: number = 0;
+  private name = '';
+  public W = 0;
+  public D = 0;
+  public L = 0;
+  public GP = 0;
   constructor(name: string) {
     this.name = name;
   }
@@ -52,12 +52,12 @@ class Team {
   }
 }
 
-let map: Map = {};
+const map: Map = {};
 
 input.forEach(GamePlayed => {
-  let [homeGameName, roadJerseyName, result] = GamePlayed.split(';');
-  let homeGame: Team = map[homeGameName] || (map[homeGameName] = new Team(homeGameName));
-  let roadJersey: Team = map[roadJerseyName] || (map[roadJerseyName] = new Team(roadJerseyName));
+  const [homeGameName, roadJerseyName, result] = GamePlayed.split(';');
+  const homeGame: Team = map[homeGameName] || (map[homeGameName] = new Team(homeGameName));
+  const roadJersey: Team = map[roadJerseyName] || (map[roadJerseyName] = new Team(roadJerseyName));
 
   if (result === 'win') {
     homeGame.win();
@@ -71,10 +71,10 @@ input.forEach(GamePlayed => {
   }
 });
 
-let printMap: PrintMap = {};
+const printMap: PrintMap = {};
 Object.keys(map).forEach(teamName => {
-  let team = map[teamName];
-  let { GP, W, D, L } = team;
+  const team = map[teamName];
+  const { GP, W, D, L } = team;
   printMap[teamName] = { GP, W, D, L, P: team.getPoints() };
 });
 

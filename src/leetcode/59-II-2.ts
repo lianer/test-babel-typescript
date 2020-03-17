@@ -98,7 +98,7 @@ class MaxQueue {
       return -1;
     }
 
-    let left = this.queue.shift();
+    const left = this.queue.shift();
 
     // 如果 queue 移除的元素与 deque 最大的元素相同，则也从 deque 中移除
     if (left === this.deque[0]) {
@@ -123,9 +123,9 @@ class MaxQueue {
 输出: [null,null,null,2,1,2]
 */
 
-let maxQueue = new MaxQueue();
+const maxQueue = new MaxQueue();
 
-let actions = [
+const actions = [
   'MaxQueue',
   'push_back',
   'push_back',
@@ -139,9 +139,9 @@ let actions = [
   'max_value',
 ];
 
-let enter = [[], [1], [3], [2], [], [], [], [], [], [], []];
+const enter = [[], [1], [3], [2], [], [], [], [], [], [], []];
 
-let result = [null];
+const result = [null];
 
 actions.forEach((ac: string, index) => {
   if (index === 0) {

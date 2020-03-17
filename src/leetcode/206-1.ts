@@ -15,7 +15,7 @@
 
 import ListNode, { genListNodeFromArr } from '../lib/list-node';
 
-let head: ListNode | null = genListNodeFromArr([1, 2, 3, 4, 5, null]);
+const head: ListNode | null = genListNodeFromArr([1, 2, 3, 4, 5, null]);
 
 console.log(JSON.stringify(head));
 
@@ -35,14 +35,14 @@ const reverseList = function(head: ListNode | null): ListNode | null {
   if (!head) {
     return head;
   }
-  let next = head.next;
+  const next = head.next;
   if (next) {
     // 解除原来的链表关系
     head.next = null;
 
     // 递归将最底部的节点抛出来
     // 可以把递归想象成一颗洋葱，这里是洋葱的中心，上面的代码会先遍历整个链表至底部，然后下面的代码会反过来从底部开始遍历至顶部
-    let newHead = reverseList(next);
+    const newHead = reverseList(next);
 
     // 交换顺序，建立新的链表关系
     next.next = head;
@@ -56,5 +56,5 @@ const reverseList = function(head: ListNode | null): ListNode | null {
 };
 
 // head = null;
-let newHead: ListNode | null = reverseList(head);
+const newHead: ListNode | null = reverseList(head);
 console.log(JSON.stringify(newHead));

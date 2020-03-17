@@ -53,8 +53,8 @@ const diameterOfBinaryTree = function(root: TreeNode | null): number {
     if (node === null || node === void 0) {
       return 0;
     }
-    let left = depth(node.left);
-    let right = depth(node.right);
+    const left = depth(node.left);
+    const right = depth(node.right);
     max = Math.max(left + right, max);
     return Math.max(left, right) + 1;
   };
@@ -64,7 +64,7 @@ const diameterOfBinaryTree = function(root: TreeNode | null): number {
   return max;
 };
 
-let treeSchema = {
+const treeSchema = {
   val: 1,
   left: {
     val: 2,

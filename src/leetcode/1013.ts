@@ -39,7 +39,7 @@
  * @param {number[]} A
  * @return {boolean}
  */
-var canThreePartsEqualSum = function(A: number[]) {
+const canThreePartsEqualSum = function(A: number[]) {
   let sum = A.reduce((_sum, val) => _sum + val);
   if (sum % 3 !== 0) {
     return false;
@@ -50,7 +50,7 @@ var canThreePartsEqualSum = function(A: number[]) {
   // 如果遍历结束后有 3 组匹配，则成功。如果有 N (N > 3) 组，那一定是 avg = 0 的情况，否则不满足条件 sum = avg * N。
   // 其实我们不用遍历完所有的数组，也不需要当出现第 3 组匹配时才算成功。只需要在数组遍历完之前（最后一个元素之前）匹配到 2 组，那么就可以视为成功。
   let count = 0;
-  let avg = sum / 3;
+  const avg = sum / 3;
   sum = 0;
   for (let i = 0; i < A.length - 1; i++) {
     sum += A[i];

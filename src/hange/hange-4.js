@@ -25,21 +25,21 @@ function genChains(stores, prefix = []) {
     if (!map[key]) {
       map[key] = true;
       if (prefixLen) {
-        let lastItem = prefix[prefixLen - 1];
+        const lastItem = prefix[prefixLen - 1];
         // 符合衔接
         if (lastItem[1] === item[0]) {
           const newPrefix = [...prefix, item];
           const newStores = [...stores.slice(0, index), ...stores.slice(index + 1, storeLen)];
           // 符合输出结果
           matchRule(newPrefix) && result.push(newPrefix);
-          let subResult = genChains(newStores, newPrefix);
+          const subResult = genChains(newStores, newPrefix);
           result = [...result, ...subResult];
         }
       } else {
         // 顶层循环
         const newPrefix = [...prefix, item];
         const newStores = [...stores.slice(0, index), ...stores.slice(index + 1, storeLen)];
-        let subResult = genChains(newStores, newPrefix);
+        const subResult = genChains(newStores, newPrefix);
         result = [...result, ...subResult];
       }
     }

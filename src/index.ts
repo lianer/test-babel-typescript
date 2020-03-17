@@ -1,4 +1,4 @@
-let map: Map<number, string> = new Map();
+const map: Map<number, string> = new Map();
 
 map.set(1, '1');
 map.set(2, '2');

@@ -32,7 +32,7 @@ input.forEach(item => (map[item.id] = item));
 
 const result = input.filter(item => {
   if (item.parentId) {
-    let parent = map[item.parentId];
+    const parent = map[item.parentId];
     if (parent) {
       parent.children ? parent.children.push(item) : (parent.children = [item]);
     } else {

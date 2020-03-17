@@ -29,23 +29,23 @@ class ListNode {
   }
 }
 
-let node3: ListNode = new ListNode(4);
-let node2: ListNode = new ListNode(2, node3);
-let node1: ListNode = new ListNode(1, node2);
-let list1 = node1; // 1 -> 2 -> 4
+const node3: ListNode = new ListNode(4);
+const node2: ListNode = new ListNode(2, node3);
+const node1: ListNode = new ListNode(1, node2);
+const list1 = node1; // 1 -> 2 -> 4
 
-let node6: ListNode = new ListNode(4);
-let node5: ListNode = new ListNode(3, node6);
-let node4: ListNode = new ListNode(1, node5);
-let list2 = node4; // 1 -> 3 -> 4
+const node6: ListNode = new ListNode(4);
+const node5: ListNode = new ListNode(3, node6);
+const node4: ListNode = new ListNode(1, node5);
+const list2 = node4; // 1 -> 3 -> 4
 
 /**
  * @param {ListNode} l1
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var mergeTwoLists = function(l1: ListNode | null, l2: ListNode | null): ListNode | null {
-  let head: ListNode = new ListNode(null);
+const mergeTwoLists = function(l1: ListNode | null, l2: ListNode | null): ListNode | null {
+  const head: ListNode = new ListNode(null);
   let cur = head;
 
   while (l1 !== null && l2 !== null) {

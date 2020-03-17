@@ -35,18 +35,19 @@ const list: Item[] = [
   },
 ];
 
-const dp = function(bagSize: number, list: Item[]) {
-  let grid: number[][] = [];
+const dp = function(bagSize: number, list: Item[]): number | void {
+  const grid: number[][] = [];
 
   for (let row = 0; row < list.length; row++) {
-    let item = list[row];
+    const item = list[row];
+    const _rowMessage = [];
     grid[row] = [];
-    let _rowMessage = [];
+
     for (let col = 0; col < bagSize; col++) {
       // 动态背包尺寸
-      let dpSize = col + 1;
+      const dpSize = col + 1;
       if (row > 0) {
-        let lastCellValue = grid[row - 1][col];
+        const lastCellValue = grid[row - 1][col];
         let currentCellValue: number;
         // 如果动态背包尺寸大于商品尺寸，那么就需要计算商品价格 + 剩余最大可装的商品价格（即：grid[row - 1][dpSize - item.size - 1]）
         // 如果动态背包尺寸等于商品尺寸，那么就等于商品价格
@@ -70,13 +71,12 @@ const dp = function(bagSize: number, list: Item[]) {
       }
       _rowMessage.push(grid[row][col]);
     }
-    console.log(_rowMessage);
   }
 
   return grid.pop()?.pop();
 };
 
-let result = dp(bagSize, list);
+const result = dp(bagSize, list);
 console.log(result);
 
 export { dp };

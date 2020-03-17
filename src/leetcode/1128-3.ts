@@ -41,8 +41,8 @@ const numEquivDominoPairs = function(dominoes: Dominoe[]): number {
   for (let i = 0; i < dominoes.length; i++) {
     let cnt = 0;
     for (let j = dominoes.length - 1; j > i; j--) {
-      let a = dominoes[i];
-      let b = dominoes[j];
+      const a = dominoes[i];
+      const b = dominoes[j];
       if ((a[0] === b[0] && a[1] === b[1]) || (a[0] === b[1] && a[1] === b[0])) {
         cnt++;
         dominoes.splice(j, 1);

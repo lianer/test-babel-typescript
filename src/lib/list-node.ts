@@ -8,7 +8,7 @@ class ListNode {
 }
 
 const genListNodeFromArr = (arr: any[]) => {
-  let head: ListNode = new ListNode(arr[0]);
+  const head: ListNode = new ListNode(arr[0]);
   let cur = head;
   arr.slice(1).forEach(val => {
     cur.next = new ListNode(val);

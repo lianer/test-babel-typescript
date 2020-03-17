@@ -22,7 +22,7 @@ interface map {
 }
 
 // 根据输入的数组中每项的 before/after/first/last 规则，输出一个新排好序的数组或者链表。要求，多解的情况可以只求一解，如果无解要求程序能检测出来。
-let input: item[] = [
+const input: item[] = [
   { id: 1 },
   { id: 2, before: 1 },
   { id: 3, after: 1 },
@@ -75,10 +75,10 @@ const moveAfter = (list: List, target: List) => {
   list.next && (list.next.prev = list);
 };
 
-let first = new List();
-let last = new List();
+const first = new List();
+const last = new List();
 let temp = first;
-let map: map = {};
+const map: map = {};
 
 // 使用初始顺序初始化链表 => first -> 1 -> 2 -> 3 -> 5 -> 6 -> 7 -> 8 -> 9 -> last
 input.forEach(item => {
@@ -89,13 +89,13 @@ concat(temp, last);
 
 // 遍历链表，调整元素顺序
 input.forEach(item => {
-  let list = map[item.id];
+  const list = map[item.id];
   if (item.before) {
-    let target = map[item.before];
+    const target = map[item.before];
     extract(list);
     moveBefore(list, target);
   } else if (item.after) {
-    let target = map[item.after];
+    const target = map[item.after];
     extract(list);
     moveAfter(list, target);
   } else if (item.first) {

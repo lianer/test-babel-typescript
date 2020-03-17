@@ -24,9 +24,9 @@
 // 时间复杂度：O(n)。遍历整个字符串一次，就可以将 dp 数组求出来。
 // 空间复杂度：O(n)。需要一个大小为 n 的 dp 数组。
 //
-var longestValidParentheses = function(s: string): number {
+const longestValidParentheses = function(s: string): number {
   let max = 0;
-  let dp: number[] = [];
+  const dp: number[] = [];
   for (let i = 1; i < s.length; i++) {
     if (s[i] === ')') {
       if (s[i - 1] === '(') {

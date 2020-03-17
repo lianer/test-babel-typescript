@@ -34,7 +34,7 @@ const merge = function(A: number[], m: number, B: number[], n: number) {
   });
 };
 
-let A = [1, 2, 3, 0, 0, 0];
+const A = [1, 2, 3, 0, 0, 0];
 merge(A, 3, [2, 5, 16], 3);
 console.log(A);
 

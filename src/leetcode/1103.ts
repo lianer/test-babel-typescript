@@ -52,7 +52,7 @@
  */
 const distributeCandies = function(candies: number, num_people: number) {
   let cnt = 1;
-  let arr: number[] = [];
+  const arr: number[] = [];
 
   for (let i = 0; i < num_people; i++) arr[i] = 0;
 

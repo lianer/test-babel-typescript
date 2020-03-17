@@ -71,7 +71,7 @@ const orangesRotting = function(grid: number[][]): number {
    * @param coord 当前橘子的坐标
    */
   const getAround = function(coord: number[]) {
-    let [x, y] = coord;
+    const [x, y] = coord;
     return [
       [x - 1, y], // 左
       [x + 1, y], // 右
@@ -89,8 +89,8 @@ const orangesRotting = function(grid: number[][]): number {
     return String(x) + ',' + String(y);
   };
 
-  let good: { [key: string]: number[] } = {};
-  let bad: { [key: string]: number[] } = {};
+  const good: { [key: string]: number[] } = {};
+  const bad: { [key: string]: number[] } = {};
   let times = 0; // 传播的分钟数
   let cnt = 0; // 每轮被传播变坏的橘子的个数
   let aroundCnt = 0; // 每个橘子传播其他橘子的个数
@@ -110,16 +110,16 @@ const orangesRotting = function(grid: number[][]): number {
     cnt = 0;
 
     Object.keys(bad).forEach((key: string) => {
-      let coord: number[] = bad[key];
+      const coord: number[] = bad[key];
       aroundCnt = 0;
 
-      let aroundCoords = getAround(coord);
+      const aroundCoords = getAround(coord);
 
       // 遍历四周的橘子，如果可以被传播，则从 good 中移除，添加到 bad 中
       aroundCoords.forEach((aroundCoord: number[]) => {
-        let [rowNum, colNum] = aroundCoord;
+        const [rowNum, colNum] = aroundCoord;
         if (grid[rowNum] !== void 0 && grid[rowNum][colNum] !== void 0 && grid[rowNum][colNum] === 1) {
-          let key = genKey(rowNum, colNum);
+          const key = genKey(rowNum, colNum);
           bad[key] = aroundCoord;
           delete good[key];
           grid[rowNum][colNum] = 2;
@@ -129,7 +129,7 @@ const orangesRotting = function(grid: number[][]): number {
 
       // 如果周边没有可以传播的橘子，则标识该橘子已经失去传染能力，从遍历列表中移除，下一次不再遍历它
       if (aroundCnt === 0) {
-        let [rowNum, colNum] = coord;
+        const [rowNum, colNum] = coord;
         delete bad[genKey(rowNum, colNum)];
       }
 

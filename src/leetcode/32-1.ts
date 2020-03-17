@@ -56,9 +56,9 @@
 //   时间复杂度：O(n)。n 是给定字符串的长度。
 //   空间复杂度：O(n)。栈的大小最大达到 n。
 //
-var longestValidParentheses = function(s: string): number {
+const longestValidParentheses = function(s: string): number {
   let max = 0;
-  let stack: number[] = [-1]; // -1 是兜底的起始索引元素，代替「开始位置」（start）
+  const stack: number[] = [-1]; // -1 是兜底的起始索引元素，代替「开始位置」（start）
   for (let i = 0; i < s.length; i++) {
     if (s[i] === '(') {
       stack.push(i);

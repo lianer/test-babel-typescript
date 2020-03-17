@@ -31,8 +31,8 @@
  * @return {number[][]}
  */
 const findContinuousSequence = function(target: number) {
-  let cases: number[][] = [];
-  let nums = [];
+  const cases: number[][] = [];
+  const nums = [];
 
   for (let i = 0; i < target; i++) {
     nums.push(i + 1);

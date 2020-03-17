@@ -43,15 +43,15 @@
  */
 const countCharacters = function(words: string[], chars: string) {
   let cnt = 0;
-  let map: { [key: string]: number } = {};
+  const map: { [key: string]: number } = {};
 
-  for (let char of chars) {
+  for (const char of chars) {
     map[char] = map[char] ? map[char] + 1 : 1;
   }
 
-  words: for (let word of words) {
-    let tmp = Object.assign({}, map);
-    for (let char of word) {
+  words: for (const word of words) {
+    const tmp = Object.assign({}, map);
+    for (const char of word) {
       if (tmp[char] !== void 0 && tmp[char] > 0) {
         tmp[char]--;
       } else {

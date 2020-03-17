@@ -35,8 +35,8 @@ interface Count {
  * @return {number}
  */
 const majorityElement = function(nums: number[]): number {
-  let cnt: Count = {};
-  let half = nums.length / 2;
+  const cnt: Count = {};
+  const half = nums.length / 2;
   for (let i = 0; i < nums.length; i++) {
     if (cnt[nums[i]]) {
       cnt[nums[i]]++;

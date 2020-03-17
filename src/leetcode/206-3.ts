@@ -15,7 +15,7 @@
 
 import ListNode, { genListNodeFromArr } from '../lib/list-node';
 
-let head: ListNode | null = genListNodeFromArr([1, 2, 3, 4, 5, null]);
+const head: ListNode | null = genListNodeFromArr([1, 2, 3, 4, 5, null]);
 
 console.log(JSON.stringify(head));
 
@@ -34,7 +34,7 @@ console.log(JSON.stringify(head));
 const reverseList = (head: ListNode | null): ListNode | null => {
   let prev: ListNode | null = null;
   while (head) {
-    let tmp = head.next;
+    const tmp = head.next;
     head.next = prev;
     prev = head;
     head = tmp;
@@ -42,5 +42,5 @@ const reverseList = (head: ListNode | null): ListNode | null => {
   return prev;
 };
 
-let newHead: ListNode | null = reverseList(head);
+const newHead: ListNode | null = reverseList(head);
 console.log(JSON.stringify(newHead));

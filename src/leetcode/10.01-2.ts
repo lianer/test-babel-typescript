@@ -28,9 +28,9 @@ B = [2,5,6],       n = 3
 const merge = function(A: number[], m: number, B: number[], n: number): void {
   // 将其中一个数组中的数字遍历完，从大（右）到小（左）遍历
   while (m > 0 && n > 0) {
-    let index = n + m - 1;
-    let a = A[m - 1];
-    let b = B[n - 1];
+    const index = n + m - 1;
+    const a = A[m - 1];
+    const b = B[n - 1];
     // 对比选出较大的数放在 m + n - 1 的位置，并将选出此数的指针向前移动
     if (a > b) {
       A[index] = a;
@@ -50,10 +50,10 @@ const merge = function(A: number[], m: number, B: number[], n: number): void {
   }
 };
 
-let A = [1, 2, 3, 0, 0, 0];
-let B = [2, 5, 16];
-let m = 3;
-let n = 3;
+const A = [1, 2, 3, 0, 0, 0];
+const B = [2, 5, 16];
+const m = 3;
+const n = 3;
 merge(A, m, B, n);
 console.log(A);
 

@@ -54,7 +54,7 @@
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function(prices: number[]): number {
+const maxProfit = function(prices: number[]): number {
   let peak = prices[0];
   let valley = prices[0];
   let profit = 0;

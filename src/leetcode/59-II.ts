@@ -44,7 +44,7 @@ interface MaxQueue {
 
 class MaxQueue {
   private queue: number[] = [];
-  private maxValue: number = -1;
+  private maxValue = -1;
 
   constructor() {}
 
@@ -79,7 +79,7 @@ class MaxQueue {
     if (this.queue.length === 0) {
       return -1;
     }
-    let front = this.queue.shift();
+    const front = this.queue.shift();
     if (front === this.maxValue) {
       this.recalculateMaxValue();
     }
@@ -102,9 +102,9 @@ class MaxQueue {
 输出: [null,null,null,2,1,2]
 */
 
-let maxQueue = new MaxQueue();
+const maxQueue = new MaxQueue();
 
-let actions = [
+const actions = [
   'MaxQueue',
   'max_value',
   'pop_front',
@@ -207,7 +207,7 @@ let actions = [
   'pop_front',
 ];
 
-let enter = [
+const enter = [
   [],
   [],
   [],
@@ -310,7 +310,7 @@ let enter = [
   [],
 ];
 
-let result = [null];
+const result = [null];
 
 actions.forEach((ac: string, index) => {
   if (index === 0) {

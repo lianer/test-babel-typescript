@@ -57,8 +57,8 @@ const numEquivDominoPairs = function(dominoes: Dominoe[]): number {
     return 0;
   }
   let matchCount = 0;
-  let origin = <Dominoe>dominoes.shift();
-  let newDominoes = dominoes.filter(item => {
+  const origin = <Dominoe>dominoes.shift();
+  const newDominoes = dominoes.filter(item => {
     return tryMatch(origin, item) === false;
   });
   if (newDominoes.length !== dominoes.length) {

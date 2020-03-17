@@ -46,12 +46,12 @@ const maxPoints = function(points: number[][]): number {
   let max = 0;
   for (let i = 0; i < points.length - 2; i++) {
     for (let j = i + 1; j < points.length - 1; j++) {
-      let [x1, y1] = points[i];
-      let [x2, y2] = points[j];
+      const [x1, y1] = points[i];
+      const [x2, y2] = points[j];
       let count = 2;
       for (let k = j + 1; k < points.length; k++) {
-        let [x, y] = points[k];
-        let line = isLine(x1, y1, x2, y2, x, y);
+        const [x, y] = points[k];
+        const line = isLine(x1, y1, x2, y2, x, y);
         if (line) {
           count++;
         }

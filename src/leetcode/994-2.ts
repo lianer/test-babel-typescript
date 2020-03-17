@@ -84,15 +84,15 @@ const orangesRotting = function(grid: number[][]): number {
 
     // 遍历腐烂的橘子，腐烂它周边的新鲜的橘子
     Object.keys(rotten).forEach((key: string) => {
-      let [rowNum, colNum] = rotten[key];
-      let list = [
+      const [rowNum, colNum] = rotten[key];
+      const list = [
         [rowNum - 1, colNum],
         [rowNum + 1, colNum],
         [rowNum, colNum - 1],
         [rowNum, colNum + 1],
       ];
       list.forEach(([rowNum, colNum]) => {
-        let _key = genKey(rowNum, colNum);
+        const _key = genKey(rowNum, colNum);
         // 如果腐烂到了一个新鲜的橘子，则把新鲜的橘子加入到腐烂的列表，并从新鲜的列表中移除
         if (fresh[_key]) {
           rotten[_key] = fresh[_key];

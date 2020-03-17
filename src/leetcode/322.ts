@@ -31,7 +31,7 @@ type Coin = number;
  * @param {number} amount
  * @return {number}
  */
-let calcCoinChange = function(coins: Coin[], remain: number, count: number[]) {
+const calcCoinChange = function(coins: Coin[], remain: number, count: number[]) {
   if (remain < 0) {
     return -1;
   }
@@ -42,9 +42,9 @@ let calcCoinChange = function(coins: Coin[], remain: number, count: number[]) {
     return count[remain - 1];
   }
 
-  let min: number = -1;
+  let min = -1;
   coins.forEach(coin => {
-    let res = calcCoinChange(coins, remain - coin, count);
+    const res = calcCoinChange(coins, remain - coin, count);
     if (res >= 0 && (min === -1 || res < min)) {
       min = 1 + res;
     }
@@ -55,7 +55,7 @@ let calcCoinChange = function(coins: Coin[], remain: number, count: number[]) {
   return count[remain - 1];
 };
 
-var coinChange = function(coins: Coin[], amount: number) {
+const coinChange = function(coins: Coin[], amount: number) {
   return calcCoinChange(coins, amount, []);
 };
 

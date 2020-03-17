@@ -42,11 +42,11 @@ interface HashMap {
 
 const numEquivDominoPairs = function(dominoes: Dominoe[]): number {
   let printNum = 0;
-  let hashMap: HashMap = {};
+  const hashMap: HashMap = {};
   dominoes.forEach(item => {
-    let a = item[0];
-    let b = item[1];
-    let key = a < b ? a * 10 + b : b * 10 + a;
+    const a = item[0];
+    const b = item[1];
+    const key = a < b ? a * 10 + b : b * 10 + a;
     if (hashMap[key]) {
       hashMap[key]++;
     } else {

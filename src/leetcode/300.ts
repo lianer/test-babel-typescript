@@ -41,7 +41,7 @@
  * @return {number}
  */
 const lengthOfLIS = function(nums: number[]): number {
-  let dp: number[] = [];
+  const dp: number[] = [];
   for (let i = 0; i < nums.length; i++) {
     // 子序列包含元素本身，初始值为 1
     dp[i] = 1;
