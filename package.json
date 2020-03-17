@@ -1,14 +1,12 @@
 {
-  "name": "test",
+  "name": "leetcode-do-it",
   "version": "1.0.0",
-  "description": "",
-  "main": "lib/index.umd.js",
-  "module": "lib/index.esm.js",
+  "description": "leetcode-do-it",
   "scripts": {
     "lint": "eslint 'src/**/*.{js,ts}'",
-    "prettier": "prettier lib/* --write",
-    "build:ts": "tsc --outDir lib",
-    "build": "rimraf lib/* && npm run build:ts && npm run prettier"
+    "prettier": "prettier dist/**/* --write",
+    "build:ts": "tsc",
+    "build": "rimraf dist/* && npm run build:ts && npm run prettier"
   },
   "author": "",
   "license": "ISC",
