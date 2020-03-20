@@ -28,10 +28,6 @@
 空间复杂度：O(1)。Boyer-Moore 算法只需要常数级别的额外空间。
 */
 
-interface Count {
-  [key: number]: number;
-}
-
 /**
  * @param {number[]} nums
  * @return {number}

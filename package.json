@@ -18,5 +18,9 @@
     "prettier": "^1.19.1",
     "rimraf": "^3.0.1",
     "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "@types/power-assert": "^1.5.3",
+    "power-assert": "^1.6.1"
   }
 }

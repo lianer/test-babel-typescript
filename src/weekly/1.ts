@@ -1,4 +1,6 @@
 /*
+2020-03-19
+
 169. 多数元素
 
 给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。
@@ -14,32 +16,40 @@
 */
 
 /*
-## 排序
+## 哈希表
 
 ### 解题思路
 
-对数组进行排序，n/2 下标的元素就是众数
-
-n 为奇数：
-[1, 1, 2, 2, 2] n=2
-[2, 2, 2, 3, 3] n=2
-
-n 为偶数：
-[1, 1, 2, 2, 2, 2] n=3
-[2, 2, 2, 2, 3, 3] n=3
+使用哈希表统计每个元素出现的次数，超过 n/2 个的元素就是众数
 
 ### 复杂度分析
 
-时间复杂度：O(nlogn)。
-空间复杂度：O(nlogn)。
+时间复杂度：O(n)。
+空间复杂度：O(n)。
 */
+
+interface Count {
+  [key: number]: number;
+}
 
 /**
  * @param {number[]} nums
  * @return {number}
  */
 const majorityElement = function(nums: number[]): number {
-  return nums.sort()[Math.floor(nums.length / 2)];
+  const cnt: Count = {};
+  const half = nums.length / 2;
+  for (let i = 0; i < nums.length; i++) {
+    if (cnt[nums[i]]) {
+      cnt[nums[i]]++;
+    } else {
+      cnt[nums[i]] = 1;
+    }
+    if (cnt[nums[i]] > half) {
+      return nums[i];
+    }
+  }
+  return -1;
 };
 
 console.log('结果', '预期');
