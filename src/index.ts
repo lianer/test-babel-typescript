@@ -15,3 +15,16 @@ for (let key of map.keys()) {
 }
 
 console.log(map);
+
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+let myIdentity: <U>(arg: U) => U = identity;
+
+let b: string | number = 1;
+function change() {
+  b = '2';
+}
+change();
+const a: number = identity(b);
