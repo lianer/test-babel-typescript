@@ -102,7 +102,17 @@ const numberOfSubarrays2 = function(nums: number[], k: number) {
 const numberOfSubarrays3 = function(nums: number[], k: number) {
   let childArrCnt = 0;
   const isOdd = (n: number) => n % 2 === 1;
-  const oddList = [-1];
+  const oddList = [-1]; // [2, 2, 1, 1, 2, 2, 1] k=2 => oddList: [-1, 0, 1, 3, 4, 5]
+  // [2, 2, 1, 1, 2, 2]
+  // 2, 2, 1, 1
+  // 2, 2, 1, 1, 2
+  // 2, 2, 1, 1, 2, 2
+  // 2, 1, 1
+  // 2, 1, 1, 2
+  // 2, 1, 1, 2, 2
+  // 1, 1
+  // 1, 1, 2
+  // 1, 1, 2, 2
   for (let i = 0; i < nums.length; i++) {
     if (isOdd(nums[i])) {
       oddList.push(i);
@@ -140,5 +150,5 @@ console.log(numberOfSubarrays(...args5), numberOfSubarrays2(...args5), numberOfS
 let args6: Args = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 2];
 console.log(numberOfSubarrays(...args6), numberOfSubarrays2(...args6), numberOfSubarrays3(...args6), 9);
 
-let args7: Args = [[2, 2, 2], 2];
-console.log(numberOfSubarrays(...args7), numberOfSubarrays2(...args7), numberOfSubarrays3(...args7), 0);
+let args7: Args = [[0, 0, 1, 1, 0, 0], 2];
+console.log(numberOfSubarrays(...args7), numberOfSubarrays2(...args7), numberOfSubarrays3(...args7), 9);
