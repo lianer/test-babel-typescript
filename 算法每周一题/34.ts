@@ -41,4 +41,3 @@ D 是按排序顺序的数字 '1'-'9' 的子集。
 var atMostNGivenDigitSet = function(D, N) {};
 
 // 提示： 可以用动态规划 或者 数学的方式去做
-// http://box.hp.guahao-inc.com/typescript/182
