@@ -38,6 +38,8 @@ D 是按排序顺序的数字 '1'-'9' 的子集。
  * @param {number} N
  * @return {number}
  */
-var atMostNGivenDigitSet = function(D, N) {};
+var atMostNGivenDigitSet = function(D: number, N: number) {
+  return [];
+};
 
 // 提示： 可以用动态规划 或者 数学的方式去做
