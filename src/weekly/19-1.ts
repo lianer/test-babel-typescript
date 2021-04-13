@@ -70,11 +70,17 @@ interface List {
 }
 
 /**
- * @param {ListNode} head
- * @return {ListNode}
+ * 方法一：借助 map 记录下标
  */
-var detectCycle = function(head: List) {
-  console.log(head);
+var detectCycle = function(head: List | null) {
+  const map = new Map<List, number>();
+  let index = 0;
+  while (head) {
+    if (map.has(head)) return map.get(head);
+    map.set(head, index++); // 储存下标
+    head = head.next;
+  }
+  return -1;
 };
 
 {
@@ -130,3 +136,5 @@ var detectCycle = function(head: List) {
   // 因为环链接到了第二个节点，返回索引1
   console.log(detectCycle(head), 1);
 }
+
+export {};

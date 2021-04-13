@@ -17,5 +17,33 @@ const genListNodeFromArr = (arr: any[]) => {
   return head;
 };
 
-export { genListNodeFromArr };
+/**
+ * 获取交叉点
+ */
+const getIntersect = function(head: ListNode) {
+  if (head === null || head.next === null) return null;
+  let slow: ListNode | null = head;
+  let fast: ListNode | null = head.next;
+
+  while (fast !== null && fast.next !== null) {
+    slow = (slow as ListNode).next;
+    fast = fast.next.next;
+    if (slow === fast) return slow;
+  }
+
+  return null;
+};
+
+/**
+ * 获取最后一个元素
+ */
+const getTail = function(head: ListNode) {
+  if (getIntersect(head)) return null;
+  while (true) {
+    if (head.next === null) return head;
+    head = head.next;
+  }
+};
+
+export { genListNodeFromArr, getIntersect, getTail };
 export default ListNode;

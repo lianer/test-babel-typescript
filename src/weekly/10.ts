@@ -31,6 +31,7 @@ const recursion = function(i: number, n: number): number {
   return recursion(i + 1, n) + recursion(i + 2, n) + recursion(i + 3, n);
 };
 
-console.log(waysToStep(7), 7); // [1,1,1,1] [2,1,1] [2,2] [3,1]
+console.log(waysToStep(15), 987);
+console.log(waysToStep(7), 44); // [1,1,1,1] [2,1,1] [2,2] [3,1]
 console.log(waysToStep(2), 2); // [1,1] [2]
 console.log(waysToStep(1), 1); // [1]
